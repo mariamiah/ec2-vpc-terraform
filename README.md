@@ -47,3 +47,17 @@ terraform {
     export AWS_ACCESS_KEY_ID="access-key-id"
     export AWS_SECRET_ACCESS_KEY="access-key-secret"
 ```
+- Manually create the s3 bucket and dynamodb table
+- Configure the above resources as the remote backend to store and lock the state file respectively.
+- Run the following terraform commands
+```sh
+  - terraform init
+  - terraform plan
+  - terraform apply
+```
+
+### Teardown Resources
+- You can remove the created resources by running the following command, to eliminate extra costs
+```sh
+  terraform destroy
+```
