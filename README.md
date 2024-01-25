@@ -1,7 +1,16 @@
-# Deploy EC2 instances with terraform
+# Deploy EC2 instances with terraform in a vpc
 - Set up the architecture below using terraform
 
 ## The architecture
+- 2 EC2 instances.
+- One instance on a public subnet
+- The second instance on a private subnet.
+- EC2 instance in a public subnet has a public IP to connect to the Internet, if there is an Internet gateway for VPC and a route from the subnet to the Internet gateway.
+- The private EC2 instance doesnot have a public IP, making it unreachable from the Internet
+- NAT gateway in the public subnet and assign it a static IP(Elastic IP).- To enable instances in private subnet to access the internet and download patches.
+- Routes for the private subnet to communicate with NAT
+
+
 [<img src="./asset/architecture.png" width="480"/>](architecture.png)
 
 ### Terraform setup
